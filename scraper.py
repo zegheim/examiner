@@ -1,3 +1,4 @@
+import json
 import random
 import re
 import requests
@@ -95,6 +96,11 @@ def strip_wsnl(html):
     return html
 
 if __name__ == '__main__':
+    with requests.Session() as s:
+        raw_data = s.get('https://exams.is.ed.ac.uk/search/')
+    with open('json/exams.json', 'w') as f:
+        d_list = json.loads(raw_data.text)['data']
+        f.write(json.dumps(d_list))
     main()
 
 
