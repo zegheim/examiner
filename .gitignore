@@ -5,10 +5,10 @@
 # Don't track these folders
 json/
 csv/
+.vscode/
 
 # Don't track these files
 config.py
-data.json
 
 #########################################################################
 # FROM https://github.com/github/gitignore/blob/master/Python.gitignore #
